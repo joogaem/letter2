@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodBye Letter</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon"
+        href="https://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/christmas-tree-icon.png">
+
+    <!--링크 미리보기: OpenGraph Tag(op)-->
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1544277879-42659615e478?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1056&q=80">
+    <meta property="og:title" content="8반 안녕">
+    <meta property="og:description" content="8반에게 보내는 마지막 편지">
+
+    <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+  * {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+    background-color: #9b070f;
+}
+
+.envelope {
+    width: 200px;
+    height: 200px;
+
+    background-image: url('https://pngimg.com/uploads/envelope/envelope_PNG18366.png');
+    background-size: cover;
+    background-position: center;
+
+    margin: 200px auto 0px auto;
+
+    cursor: pointer;
+}
+
+.envelope-msg {
+    color: white;
+    text-align: center;
+}
+
+.letter-close {
+    display: block;
+}
+
+.letter-open {
+    display: none;
+}
+
+.rtan {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+
+    background-image: url('https://blog.kakaocdn.net/dn/bxIjiY/btrAD9o5pgG/pW5QizucRqbqtk9KdICLzk/img.gif');
+    background-size: cover;
+    background-position: center;
+
+    margin: 100px auto 0px auto;
+
+    border-radius: 100px;
+    border: 5px solid white;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 10px 0px white;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.messagebox {
+    padding: 30px;
+    margin: auto;
+
+    background-color: ivory;
+    width: 300px;
+
+    color: brown;
+    font-size: 20px;
+    line-height: 30px;
+
+    border-radius: 10px;
+    border: 5px solid white;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 10px 0px white;
+}
+
+.from {
+    text-align: right;
+    margin-bottom: 0px;
+}
+
+/*반응형: max-width: 넓이 이하에서 적용*/
+@media screen and (max-width: 760px) {
+    .messagebox {
+        width: 70%;
+        padding: 5%;
+    }
+
+    .rtan {
+        width: 150px;
+        height: 150px;
+        margin: 70px auto 0px auto;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .envelope {
+        margin: 150px auto 0px auto;
+    }
+}
+</style>
+    </script>
+    <script type="text/javascript" >
+
+function open_letter() {
+    document.getElementsByClassName("letter-close")[0].style.display = 'none'
+    document.getElementsByClassName("letter-open")[0].style.display = 'block'
+
+    random_rtans();
+}
+
+function random_rtans() {
+    let rand_number = Math.floor(Math.random() * 10) % 4;
+    let rtan_path = rtans[rand_number];
+    console.log(rand_number);
+    document.getElementsByClassName("rtan")[0].style.backgroundImage = `url("https://blog.kakaocdn.net/dn/bxIjiY/btrAD9o5pgG/pW5QizucRqbqtk9KdICLzk/img.gif")`;
+}
+
+function go_rtan() {
+    alert('나 잊으면 안돼!!');
+    window.open('https://youtu.be/8FQ_5qlvQe0');
+}
+
+
+get_this_year();
+    </script>
+</head>
+
+<body>
+    <div class="letter-close">
+        <div class="envelope" onclick="open_letter()"></div>
+        <h2 class="envelope-msg">봉투 열어봐!</h2>
+    </div>
+
+    <div class="letter-open">
+        <div class="rtan" onclick="go_rtan()"></div>
+        <h1><span class="h1_year"></span>안녕 영주쌤이야~</h1>
+        <div class="messagebox">
+
+            예겸이 안녕~ <br />
+            예겸이가 천안천에서 <br />
+            날 봤다고 해서 너무 놀랐어,,ㅎ <br />
+            그 때 강아지 산책시키면서  <br />
+            강아지 징검다리 건너게 하려고<br />
+            모카~^^~~ 이러고 있었는데..  <br />
+            앞에서 남자애들이 쪼로록 앉아서 <br />
+            폰게임 하는거 봤거든.. 그 중 하나였을까?ㅎ <br />
+            민망하네 ㅎㅎㅎ <br />
+            그럼 태권도도 열심히 하구 공부도 열심히 해!! <br />
+            한달동안 고마웠어 ❤️ <br />
+
+            <p class="from"><span class="this_year"></span>- 교생쌤이</p>
+  </div>
+    </div>
+</body>
+
+</html>
